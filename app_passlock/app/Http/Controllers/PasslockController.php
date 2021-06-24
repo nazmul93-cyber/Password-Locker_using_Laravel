@@ -17,19 +17,14 @@ class PasslockController extends Controller
 
         return view("locker");
     }
+
+    
     public function lockIt(Request $request) {
-
-        // return ["key" => "value"];
-
-        // return Passlock::all();
-
-        // dd($request);
-
 
         $validated = $request->validate([
             'website'=>'required|url',
             'email'=>'required|email',     
-            'password'=>'required|min:8|max:18|alpha_num',    
+            'password'=>'required',    
             'confirm_password'=>'required|same:password', 
            
         ],[
@@ -46,31 +41,23 @@ class PasslockController extends Controller
         
     }
 
-    public function readIt(Request $request) {
+
+
+    public function readIt() {
 
         // $list = Passlock::all();
         $list = Passlock::Paginate(10);
-
-
-
-        // $website = $request->search;
-        // // $list = Passlock::where('website','like','%'.$website.'%')->paginate(5); 
-        // $list = Passlock::where('website','like','%'.$website.'%'); 
-
-        // dd($list[0]->password);
-        // dd($list);
-        // dd(count($list));
 
         // decryption for user
         for($i=0;$i<count($list);$i++) {
             $list[$i]->password = Crypt::decrypt($list[$i]->password);
         }
 
-        // dd($list);
-
-
         return view("list",["klist" => $list]);
     }
+
+
+    //the delete 
 
     public function delIt($id) {
 
@@ -90,7 +77,7 @@ class PasslockController extends Controller
         $validated = $request->validate([
             'website'=>'required|url',
             'email'=>'required|email',     
-            'password'=>'required|min:8|max:18|alpha_num',    
+            'password'=>'required',    
             'confirm_password'=>'required|same:password', 
            
         ],[

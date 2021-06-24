@@ -24,13 +24,14 @@ class PasslockSeeder extends Seeder
         //     "password" => Crypt::encrypt(Str::random(8)),
         // ]);
 
-        for ($i=0; $i < 99; $i++) { 
+        for ($i=0; $i < 99; $i++) 
+        { 
             DB::table('passlocks')->insert([
                'website' => Str::random(5),
                'email' => Str::random(5)."@gmail.com",
                'password'=> Crypt::encrypt(Str::random(8)),
                
            ]);
-       }
+        }
     }
 }
