@@ -64,7 +64,7 @@
                      <!-- settings -->
                         <form method="POST" action="{{ route('form') }}">
                             @csrf
-                            <x-dropdown-link :href="route('form')"
+                            <x-dropdown-link :href="{{ route('form') }}"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ (' Settings') }}

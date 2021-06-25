@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+// models
 use App\Models\Passlock;
+use App\Models\User;
+
+// security
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
+
+// new addition
+use Illuminate\Support\Facades\Auth;
+use Session;
 
 
 
@@ -91,5 +100,54 @@ class PasslockController extends Controller
         Passlock::find($request->id)->update($validated);
 
         return redirect('/dashboard/list')->withSuccess("Congrats!!! Your record was updated");      
+    }
+
+// settings page functionality
+
+    public function setForm() {
+
+        return view('settings');
+    }
+
+    public function setIt(Request $request) {
+
+        $validated = $request->validate([
+            'unimail' => 'required',
+            'authpass' => 'required',
+            'name' => 'required|string|max:25',
+            'password' => 'required|min:8|max:20|alpha_num',
+            'confirm'=>'required|same:password', 
+        ],[
+            'unimail.required'=>'must contain your login email',        
+            'authpass.required'=>'must contain login password',
+            'password.required'=>'must contain new password',
+        ]);
+
+        $validated['password'] = Hash::make($validated['password']);
+
+        // dd($validated);
+        // dd(User::all());
+        // dd(User::where('email',$request->unimail)->first()->password);
+        // dd(Hash::check($request->authpass,User::where('email',$request->unimail)->first()->password));
+
+        if(Hash::check($request->authpass,User::where('email',$request->unimail)->first()->password)) {
+            $user = User::where('email',$request->unimail)->update([
+                'name' => $validated['name'],
+                'password' => $validated['password'],
+            ]);
+
+            // return redirect("/dashboard");
+            if($user) {
+
+                Auth::logout();
+                Session::flush();
+                return redirect('/login');
+            }
+
+        }else {
+
+            return back()->withError("Your credentials did not match");
+        }
+
     }
 }
