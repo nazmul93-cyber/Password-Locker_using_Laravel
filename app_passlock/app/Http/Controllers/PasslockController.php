@@ -112,13 +112,14 @@ class PasslockController extends Controller
     public function setIt(Request $request) {
 
         $validated = $request->validate([
-            'unimail' => 'required',
+            'unimail' => 'required|email|exists:users,email',
             'authpass' => 'required',
             'name' => 'required|string|max:25',
             'password' => 'required|min:8|max:20|alpha_num',
             'confirm'=>'required|same:password', 
         ],[
             'unimail.required'=>'must contain your login email',        
+            'unimail.exists'=>'unregistered email address',        
             'authpass.required'=>'must contain login password',
             'password.required'=>'must contain new password',
         ]);
