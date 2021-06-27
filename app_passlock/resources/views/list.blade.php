@@ -21,17 +21,17 @@
             @endif
 
             
-            <!-- <form action="/dashboard/list" method="POST">
+            <form action="/dashboard/list" method="POST">
                 @csrf
                 <div class="form-row">      
                     <div class="col-md-4 mb-3">
                         <label for="field1">Search</label>
-                        <input type="text" name="serach" class="form-control" id="field1" placeholder="Search Website URL" required>
+                        <input type="text" name="search" class="form-control" id="field1" placeholder="Search Website URL" required>
                 
                         <button class="btn btn-primary" type="submit">Search</button>   
                     </div>
                 </div>
-            </form> <br /> -->
+            </form> <br />
 
             <div class="table-responsive">
 

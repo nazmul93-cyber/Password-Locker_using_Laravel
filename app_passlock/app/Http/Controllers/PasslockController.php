@@ -52,10 +52,14 @@ class PasslockController extends Controller
 
 
 
-    public function readIt() {
+    public function readIt(Request $request) {
 
         // $list = Passlock::all();
-        $list = Passlock::Paginate(10);
+        // $list = Passlock::Paginate(10);
+
+
+        $url = $request->search;
+        $list = Passlock::where('website','like','%'.$url.'%')->paginate('15');  
 
         // decryption for user
         for($i=0;$i<count($list);$i++) {
@@ -66,7 +70,7 @@ class PasslockController extends Controller
     }
 
 
-    //the delete 
+    // Now delete 
 
     public function delIt($id) {
 
