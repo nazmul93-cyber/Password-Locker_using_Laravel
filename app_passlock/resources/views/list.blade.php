@@ -1,13 +1,19 @@
 
  <x-app-layout>
     <x-slot name="header">
-            {{ __('List') }}
+            {{ __("List of all the account's") }}
     </x-slot>
+    <style>
+        .list-style{
+            height: 90vh;
+            background-color: rgba(141, 210, 140, 0.1);
+            
+        }
+    </style>
+       
 
-        <div class="container" style="margin-top:5vh;">
 
-
-            @if(Session::has('success'))
+            {{-- @if(Session::has('success'))
                 <div class="card card-inverse card-success text-center alert alert-success">
                     <div class="card-block">
                         <blockquote class="card-blockquote">
@@ -18,20 +24,28 @@
                         </blockquote>
                     </div>
                 </div>
-            @endif
+            @endif--}}
 
-            
-            <form action="/dashboard/list" method="POST">
+        <div class="list-style">
+
+            <form action=" {{route('list')}} " method="POST">
                 @csrf
-                <div class="form-row">      
-                    <div class="col-md-4 mb-3">
-                        <label for="field1">Search</label>
-                        <input type="text" name="search" class="form-control" id="field1" placeholder="Search Website URL" required>
-                
-                        <button class="btn btn-primary" type="submit">Search</button>   
+
+                <div class="d-flex justify-content-center py-5">    
+                    {{-- offset-md-2 offset-lg-2 col-sm-12 col-md-6 col-lg-6  --}}
+                    <div class="  col-lg-5">
+                        {{-- <label for="field1">Search</label> --}}
+                        <input type="text"  name="search" class="form-control" id="field1" placeholder="Search inserted Website URL" required>
+                        
+                    </div>
+                    {{-- offset-md-1 offset-lg-1 col-sm-12 col-md-2 col-lg-2  offset-md-1 offset-lg-1 --}}
+                    <div class="  ml-3 col-lg-2">
+                        <button class="btn btn-primary  col-lg-12" type="submit">Search</button>   
+
                     </div>
                 </div>
-            </form> <br />
+
+            </form>
 
             <div class="table-responsive">
 
@@ -41,7 +55,7 @@
                             <th scope="col">#</th>
                             <th scope="col">website</th>
                             <th scope="col">Email</th>
-                            <th scope="col">odekha</th>
+                            <th scope="col-md ">hide/unhide</th>
                             <th scope="col">Password</th>
                             <th scope="col">Operation</th>
                             </tr>
@@ -55,19 +69,42 @@
                                     <th scope="row">{{$i}}</th>
                                     <td scope="row">{{$row->website}}</td>
                                     <td scope="row">{{$row->email}}</td>
-                                    <td scope="row"> 
+                                    <td scope="row" class="sign_hide"> 
                                         <i class="fas fa-eye"></i> 
                                     </td>
-                                    <td scope="row">{{$row->password}}</td>
+                                    <td scope="row" class="row_pass">{{$row->password}}</td>
                                     <td scope="row">
-                                        <a href="/delete/{{$row->id}}" style="color:#c0392b;margin:5px;"><i class="far fa-trash-alt"></i></a>
+                                        <a href="/delete/{{$row->id}}" ><i class="text-danger far fa-trash-alt"></i></a>
 
-                                        <a href="/edit/{{$row->id}}" style="color:#1abc9c;margin:5px;"><i class="far fa-edit"></i></a>
+                                        <a href="/edit/{{$row->id}}" ><i class=" text-success ml-2 far fa-edit"></i></a>
                                     </td>
                                 </tr>
                             </tbody>
                             <?php $i++; ?>
+
                         @endforeach
+                            <script type="text/javascript">
+                                
+                                let target_element = document.querySelectorAll('.row_pass');
+                                let hide_button = document.querySelectorAll('tr .sign_hide > i');
+
+                                // console.log(hide_button);
+                                for (let i = 0; i < hide_button.length; i++) {
+                                    hide_button[i].addEventListener('click',()=>{
+
+                                            target_element[i].attributes.type = 'password';
+                                        
+                                    })
+                                    
+                                }
+
+                                
+                                
+                                // console.log(hide_button,target_element);
+                                
+                                
+
+                            </script>
 
 
 
@@ -77,14 +114,6 @@
             
             {{$klist->links()}}
        
-
-            <!-- css style to remove the arrows -->
-            {{-- <style> --}}
-                {{-- .w-5 { --}}
-                     {{-- display: none; --}}
-                {{-- } --}}
-            {{-- </style> --}}
-
 
 
 
@@ -99,17 +128,18 @@
 
 
 
-                <a data-toggle="collapse" href="#multiCollapseExample1"  >Toggle first element</a>
+                {{-- <a data-toggle="collapse" href="#multiCollapseExample1"  >Toggle first element</a>
                 
                     <div class=" collapse " id="multiCollapseExample1">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                         
                     </div>
                 
+                </div> --}}
+
         </div>
-
-
-
-
+                {{-- <div class="fixed-bottom"> --}}
+                    <x-footer></x-footer>
+                {{-- </div> --}}
 </x-app-layout>
 

@@ -1,76 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Settings</title>
-</head>
-<body>
 
-
-    <h3>Welcome to settings page</h3>
-
-        @if(session()->has('error')) 
-
-            <div class="text-danger">
-                {{session()->get("error")}}
-            </div>
-
-        @endif  <br />
-
-        <form action="/dashboard/settings" method="POST">
-            @csrf
-
-            <input type="email" name="unimail" id="" placeholder="provide login email">
-        @if($errors->has('unimail'))
-            <div class="text-danger">
-                {{$errors->first('unimail')}}
-            </div>
-        @endif
-            <br /><br />
+<style>
+    .settings-style{
+        /* height: 90vh; */
+        background-color: rgba(141, 210, 140, 0.1);
         
-            <input type="password" name="authpass" id="" placeholder="provide login password">
-        @if($errors->has('authpass'))
-            <div class="text-danger">
-                {{$errors->first('authpass')}}
-            </div>
-        @endif
-            <br /><br />
-        
+    }
+  </style>
+  
+  
+  <x-app-layout>
+    <x-slot name="header">
+            {{ __('And this is the settings page ') }}
+    </x-slot>
+  
 
-            <input type="text" name="name" id="" placeholder="update your profile name"> 
-        @if($errors->has('name'))
-            <div class="text-danger">
-                {{$errors->first('name')}}
-            </div>
-        @endif  <br /><br />
+ 
+    <div class=" mt-2 settings-style" >
 
-            <input type="password" name="password" id="" placeholder="update your password"> 
-        @if($errors->has('password'))
-            <div class="text-danger">
-                {{$errors->first('password')}}
-            </div>
-        @endif  <br /><br />
+        <div class=" text-muted pt-5">
 
-            <input type="password" name="confirm" id="" placeholder="confirm your password"> 
-        @if($errors->has('confirm'))
-            <div class="text-danger">
-                {{$errors->first('confirm')}}
-            </div>
-        @endif  <br /><br />
+            
 
-            <button type="submit">update profile</button>
+                <form class="col" action=" {{route('settings')}} " method="POST">
+                    @csrf
+                    <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
+
+                        <label for="field1">Your login email to verify it's you</label>
+                          <input type="email" name="unimail" class="form-control" id="" placeholder="Your login email">
+                              @if($errors->has('unimail'))
+                                  <div class="text-danger">
+                                      {{$errors->first('unimail')}}
+                                  </div>
+                              @endif
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
+
+                        <label for="field1"> Your login password to verify it's you, i know i am repeating my-self </label>
+                      
+                              <input type="password" class="form-control" name="authpass" id="" placeholder="Your login password">
+                              @if($errors->has('authpass'))
+                                  <div class="text-danger">
+                                      {{$errors->first('authpass')}}
+                                  </div>
+                              @endif
+                    </div>
+                    <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
+
+                        <label for="field1">Now you can change the username</label>
+                      
+                           
+                              <input type="text" name="name" class="form-control" id="" placeholder="Your new probably creative username"> 
+                              @if($errors->has('name'))
+                                  <div class="text-danger">
+                                      {{$errors->first('name')}}
+                                  </div>
+                              @endif  
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
+
+                        <label for="field1">Here you can update your password </label>
+                      
+                              <input type="password" class="form-control" name="password" id="" placeholder="Set a new you password for your this account"> 
+                              @if($errors->has('password'))
+                                  <div class="text-danger">
+                                      {{$errors->first('password')}}
+                                  </div>
+                              @endif  
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
+                        <label for="field1">Now you need to match this field with the privious field to successfully change the password </label>
+                        <input type="password" name="confirm" class="form-control" id="" placeholder="please confirm your password"> 
+                            @if($errors->has('confirm'))
+                                <div class="text-danger">
+                                    {{$errors->first('confirm')}}
+                                </div>
+                            @endif 
+                    </div>
+
+
+                    <div class="col-sm-12 col-md-12 col-lg-12 mt-4">
+                        <button class="btn btn-success col-lg-12" type="submit">Submit form</button>
+                      </div>
 
 
 
-        
-        </form>
+                
+                </form>
+        </div>
+    </div>
 
-        <style>
-            .text-danger{
-                color:#c0392b;
-            }
-        </style>
-</body>
-</html>
+    <div >
+        <x-footer></x-footer>
+    </div>
+</x-app-layout>

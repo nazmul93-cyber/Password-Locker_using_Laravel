@@ -24,7 +24,7 @@
                     <!-- Form Link -->
                     <li class="nav-item">
                         <div class="nav-link">
-                            <a href=" {{route('form')}} " class="btn text-muted"> Form</a>
+                            <a href=" {{route('form')}} " class="btn text-muted"> Add</a>
                         </div>
                     </li>
                 
@@ -49,17 +49,10 @@
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         
-                            <form method="POST" action="{{ route('form') }}">
-                                @csrf
-                                {{-- i cant use hyperlink because of it uses get method i need post --}}
-                                <button class="dropdown-item" type="submit"> {{ __('Profile') }}</button> 
-                            </form>
                         
-                            <form method="POST" action="{{ route('form') }}">
-                                @csrf
                                 {{-- i cant use hyperlink because of it uses get method i need post --}}
-                                <button class="dropdown-item" type="submit"> {{ __('settings') }}</button> 
-                            </form>
+                                <a href=" {{route('settings')}} " class="dropdown-item " > {{ __('Profile settings') }}</a> 
+                                
 
                             <div class="dropdown-divider"></div> 
                             
