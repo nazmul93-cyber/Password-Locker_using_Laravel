@@ -15,7 +15,7 @@
         <a href="github.com" class="mr-2">
           <i class="fab fa-twitter text-dark"></i>
         </a>
-        <a href="github.com" class="ml-2">
+        <a href="https://github.com/merajjahir/project_passlock" class="ml-2">
           <i class="fab fa-github text-dark"></i>
         </a>
       </div>
@@ -27,7 +27,7 @@
     <div class=" col-sm-12 col-md-4 col-lg-4 text-center mt-4 "> 
       
       © 2021 Copyright:
-      <a class="text-reset fw-bold" href="#"> Our repository </a>
+      <a class="text-reset fw-bold" href="https://github.com/merajjahir/project_passlock"> Our repository </a>
     </div>
 
   

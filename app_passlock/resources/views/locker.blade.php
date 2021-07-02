@@ -13,21 +13,6 @@
   </x-slot>
 
       
-    
-
-
-    {{-- @if(Session::has('success')) --}}
-    {{-- <div class="card card-inverse card-success text-center alert alert-success">
-      <div class="card-block">
-        <blockquote class="card-blockquote"> --}}
-          {{-- {{Session::get('success')}} --}}
-          {{-- @php --}}
-            {{--  Session::forget('success'); --}}
-           {{-- @endphp --}}
-        {{-- </blockquote>
-      </div>
-    </div> --}}
-    {{-- @endif  --}}
 
 
     <div class="locker-style col ">

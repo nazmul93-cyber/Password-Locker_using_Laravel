@@ -15,9 +15,9 @@
   
 
  
-    <div class=" mt-2 settings-style" >
+    <div class=" mt-2 settings-style " >
 
-        <div class=" text-muted pt-5">
+        <div class=" text-muted pt-5 " >
 
             
 
@@ -91,8 +91,8 @@
                 </form>
         </div>
     </div>
-
-    <div >
+    <div class="col">
         <x-footer></x-footer>
     </div>
+
 </x-app-layout>

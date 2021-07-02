@@ -4,7 +4,7 @@
 
             <div class="row ">
 
-                <div class="col-sm-12 col-md-6 pt-5 " style="height:92vh ; background-color: rgb(141, 210, 140,.4)">
+                <div class="col-sm-12 col-md-6 col-lg-6 pt-5 " style="height:92vh ; background-color: rgb(141, 210, 140,.4)">
                         <div class="mt-5 col">
                             <h1>Password Locker</h1>
                         </div>
@@ -16,14 +16,14 @@
                         <div class="mt-5 col-sm-6">
                             <p>
                                 Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
-                            in one place and just remember one password 
+                                in one place and just remember one password 
                             </p>
                         </div>
 
                 </div>
 
                 
-                    <div class="col-sm-12 col-md-6  pt-5 " style=" height:92vh;">
+                        <div class="col-sm-12 col-md-6 col-lg-6 pt-5 " style=" height:92vh;">
                             <div class="d-flex justify-content-end  col">
                                 <a href=" {{route('register')}} " class="text-muted"> {{ __("Don't have an account?") }} </a>    
                             </div>
@@ -94,17 +94,18 @@
                             </div>
                             
                             
+                        
                         </div>
-
-            </div>
-            
-            
-            
-        </section>    
-        <div class="fixed-bottom">
-            <x-footer >
-            </x-footer>
-        </div>
-    
+                        
+                        <div class="col" style="  ">
+                                <x-footer >
+                                </x-footer>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </section>    
+                
 </x-guest-layout>
 
