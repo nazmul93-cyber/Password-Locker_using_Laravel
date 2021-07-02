@@ -1,13 +1,12 @@
-{{-- @extends('layouts.app')
 
-@section('content') --}}
+
 
 <x-guest-layout>
     <section class="container-fluid" >
 
         <div class="row">
 
-            <div class="col-sm-12 col-md-6" style=" height:90vh; background-color: rgb(141, 210, 140,.4)">
+            <div class="col-sm-12 col-md-6 pt-5" style=" height:92vh; background-color: rgb(141, 210, 140,.4)">
                     <div class="mt-5 col">
                         <h1>Password Locker</h1>
                     </div>
@@ -25,7 +24,7 @@
 
             </div>
 
-            <div class="col-sm-12 col-md-6 mt-5" style=" height:90vh;">
+            <div class="col-sm-12 col-md-6 mt-5" style=" height:92vh;">
 
             <div class="d-flex justify-content-end  col">
                 <a href=" {{route('login')}} " class="text-muted"> {{ __("already have an account?") }} </a>    
@@ -106,8 +105,8 @@
             <x-footer >
             </x-footer>
         </div>
-
-
+        
+        
     </section>   
-{{-- @endsection --}}
+
 </x-guest-layout>

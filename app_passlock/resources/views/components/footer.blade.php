@@ -1,6 +1,6 @@
 
 
-<footer style="bottom:0px position: absolute" class=" container-fluid row d-flex  justify-content-between text-center text-lg-start  text-muted  " style="background-color:rgb(0, 0, 0,.2); ">
+<footer style="" class=" container-fluid row d-flex  justify-content-between text-center text-lg-start  text-muted  " style="background-color:rgb(0, 0, 0,.2); ">
 
   
   <div class="d-flex  align-items-center col-sm-12  col-md-4 col-lg-4 justify-content-center pt-4 pl-4 h6 text-dark">
@@ -40,11 +40,14 @@
                   PROJECT BY
                 </p>
                 <p>
-                  <a href="https://github.com/merajjahir" class=" text-dark mr-4"> MERAJ </a>
+                  <a href="https://github.com/nazmul" class=" text-dark mr-4"> NAZMUL</a>
                 </p>
-
+                <p class="mr-4">
+                 && 
+                </p>
+                
                 <p>
-                  <a href="https://github.com/nazmul" class="text-dark "> NAZMUL </a>
+                  <a href="https://github.com/merajjahir " class="text-dark "> MERAJ </a>
                 </p>
                 
               

@@ -20,7 +20,7 @@
     
     <body>
         
-        <div class="font-sans text-muted antialiased">
+        <div class="font-sans text-muted ">
             {{ $slot }}
         </div>
 

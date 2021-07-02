@@ -92,7 +92,7 @@
                                 for (let i = 0; i < hide_button.length; i++) {
                                     hide_button[i].addEventListener('click',()=>{
 
-                                            target_element[i].attributes.type = 'password';
+                                            console.log(target_element[i].setAttributeNode("type","*"));
                                         
                                     })
                                     
@@ -114,14 +114,16 @@
             
             {{$klist->links()}}
        
+            <p class="d-flex justify-content-end mt-2">
+            <a href=" {{route('form')}} " class="btn btn-success "> Add More account password's </a>
+            </p>
 
 
-
-            <blockquote class="blockquote">
+            {{-- <blockquote class="blockquote">
                 <p class="mb-0 mt-5">
                     please<a href=" {{route('form')}} " style="text-decoration:none; color:rgb(19, 136, 87); "> click </a>here to lock more passwords
                 </p>
-            </blockquote>
+            </blockquote> --}}
         
         
 
@@ -137,9 +139,11 @@
                 
                 </div> --}}
 
-        </div>
-                {{-- <div class="fixed-bottom"> --}}
+                <div class="col " style="bottom: 0px position:relative">
                     <x-footer></x-footer>
-                {{-- </div> --}}
+                </div>
+        </div>
+
+
 </x-app-layout>
 

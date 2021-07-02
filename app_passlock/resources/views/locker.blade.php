@@ -30,7 +30,7 @@
     {{-- @endif  --}}
 
 
-    <div class="locker-style col">
+    <div class="locker-style col ">
       <form action=" {{route('form')}} " method="POST">
         @csrf
             <div class="col text-muted pt-5">

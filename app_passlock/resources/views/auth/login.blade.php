@@ -1,10 +1,10 @@
 <x-guest-layout>
 
-    <section class="container-fluid" >
+    <section class="container-fluid " >
 
-        <div class="row">
+            <div class="row ">
 
-                <div class="col-sm-12 col-md-6" style=" height:90vh; background-color: rgb(141, 210, 140,.4)">
+                <div class="col-sm-12 col-md-6 pt-5 " style="height:92vh ; background-color: rgb(141, 210, 140,.4)">
                         <div class="mt-5 col">
                             <h1>Password Locker</h1>
                         </div>
@@ -23,7 +23,7 @@
                 </div>
 
                 
-                <div class="col-sm-12 col-md-6 mt-5" style=" height:90vh;">
+                    <div class="col-sm-12 col-md-6  pt-5 " style=" height:92vh;">
                             <div class="d-flex justify-content-end  col">
                                 <a href=" {{route('register')}} " class="text-muted"> {{ __("Don't have an account?") }} </a>    
                             </div>
@@ -92,18 +92,19 @@
                                     </div>
                                 </form>
                             </div>
-
-                </div>
+                            
+                            
+                        </div>
 
             </div>
             
             
-            <div class="fixed-bottom">
-                <x-footer >
-                </x-footer>
-            </div>
-        
-    </section>    
+            
+        </section>    
+        <div class="fixed-bottom">
+            <x-footer >
+            </x-footer>
+        </div>
     
 </x-guest-layout>
 
