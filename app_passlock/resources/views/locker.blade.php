@@ -1,7 +1,7 @@
 <style>
   .locker-style{
-      height: 90vh;
-      background-color: rgba(141, 210, 140, 0.1);
+      /* height: 90vh; */
+      /* background-color: rgba(141, 210, 140, 0.1); */
       
   }
 </style>
@@ -70,7 +70,7 @@
       </form>
 
     </div>
-    <div style="" class="col">
+    <div style="" class="col mt-5">
         
           <x-footer ></x-footer>
         

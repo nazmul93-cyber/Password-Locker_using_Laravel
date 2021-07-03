@@ -74,7 +74,7 @@
     </div>
 
             
-        <div  style="" class="col">
+        <div  style="" class="col mt-5">
             <x-footer></x-footer>
         </div>
     </div>

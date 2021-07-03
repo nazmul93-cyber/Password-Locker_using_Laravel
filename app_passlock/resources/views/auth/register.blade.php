@@ -4,9 +4,9 @@
 <x-guest-layout>
     <section class="container-fluid" >
 
-        <div class="row">
+        <div class="row d-flex justify-content-between" >
 
-            <div class="col-sm-12 col-md-6 pt-5" style=" height:92vh; background-color: rgb(141, 210, 140,.4)">
+            <div class="col-sm-12 col-md-6 pt-5" style=" background-color: rgb(141, 210, 140,.4)">
                     <div class="mt-5 col">
                         <h1>Password Locker</h1>
                     </div>
@@ -18,23 +18,23 @@
                     <div class="mt-5 col-sm-6">
                         <p>
                             Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
-                        in one place and just remember one password 
+                            in one place and just remember one password 
                         </p>
                     </div>
 
             </div>
 
-            <div class="col-sm-12 col-md-6 mt-5" style=" height:92vh;">
+            <div class="col-sm-12 col-md-6 " >
 
-            <div class="d-flex justify-content-end  col">
-                <a href=" {{route('login')}} " class="text-muted"> {{ __("already have an account?") }} </a>    
-            </div>
-                <div class="mt-5 ml-4">
-                    <div class=" mb-4">
-                        <h4>
-                            Just need some info's to make your account
-                        </h4>
+                    <div class="d-flex justify-content-end  col mt-5">
+                        <a href=" {{route('login')}} " class="text-muted"> {{ __("already have an account?") }} </a>    
                     </div>
+                    <div class="mt-5 ml-4">
+                        <div class=" mb-4">
+                            <h4>
+                                Just need some info's to make your account
+                            </h4>
+                        </div>
                         <form  method="POST" action="{{ route('register') }}">
                             @csrf
 
@@ -98,14 +98,10 @@
                             </div>
                         </form>
                     </div>
-                </div>
+            </div>
         </div>
 
-        <div class="fixed-bottom">
-            <x-footer >
-            </x-footer>
-        </div>
-        
+       
         
     </section>   
 

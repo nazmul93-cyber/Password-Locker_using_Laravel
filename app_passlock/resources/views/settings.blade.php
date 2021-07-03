@@ -91,7 +91,7 @@
                 </form>
         </div>
     </div>
-    <div class="col">
+    <div class="col mt-5">
         <x-footer></x-footer>
     </div>
 

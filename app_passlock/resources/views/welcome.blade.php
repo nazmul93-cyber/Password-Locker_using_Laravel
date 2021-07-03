@@ -41,17 +41,23 @@
             </script>
     </head>
 
-    <body>
-        <section style="background-color:rgb(141, 210, 140,0.4) ;height:90vh">
+    <body style="background-color:rgb(141, 210, 140,0.4) ;height:90vh">
+        <section >
 
             <div class="d-flex align-items-center flex-column pt-5">
                 <div class="mt-5">
                     <h2 class="">Password Locker</h2>
                 </div>
                 
+<<<<<<< HEAD
                 <div class="my-4">
                    <h4 class=" offset-sm-4 col-sm-4  text-sm-center">
                         <!-- <div class="owl-carousel owl-theme mt-5 container">
+=======
+                <div class="my-4 container">
+                    <h4 class=" offset-sm-4 col-sm-4  text-sm-center ">
+                        <div class="owl-carousel owl-theme mt-5 ">
+>>>>>>> cf4928a68a3762ccc1ce0156354a357a44b271ad
                                 <div class="item">
 
                                         Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
@@ -59,17 +65,23 @@
                                         
                                 </div>
                                 <div class="item">
-                                    Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
-                                    in one place and just remember one password 
+                                    Some other good side and so much good stuff
                                 </div>
                                 <div class="item">
                                     
                                     Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
                                     in one place and just remember one password 
                                 </div>
+<<<<<<< HEAD
                         </div> --> 
                        Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
                         in one place and just remember one password 
+=======
+                        </div> 
+                        {{-- Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
+                        in one place and just remember one password  --}}
+                        
+>>>>>>> cf4928a68a3762ccc1ce0156354a357a44b271ad
                     </h4>
                 </div>
 
@@ -93,7 +105,10 @@
                                 <form action=" {{route('login')}} " method="GET">
                                 
                                     <button type="submit" class="btn btn-dark" >Login</button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> cf4928a68a3762ccc1ce0156354a357a44b271ad
                                     
                                     {{-- <a href="{{ route('login') }}" class="btn btn-secondary ">Log in</a> --}}
                                 
@@ -124,7 +139,7 @@
             
 
         </section>
-        <div class="col">
+        <div class="col mt-5">
             <x-footer >
             </x-footer>
         </div>

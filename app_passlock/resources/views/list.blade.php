@@ -1,7 +1,7 @@
 <style>
     .list-style{
         height: 90vh;
-        background-color: rgba(141, 210, 140, 0.1);
+        /* background-color: rgba(141, 210, 140, 0.1); */
         
     }
 </style>
@@ -54,12 +54,12 @@
                                     <td scope="row">{{$row->website}}</td>
                                     <td scope="row">{{$row->email}}</td>
                                     <td scope="row" class="sign_hide"> 
-                                        <i class="text-dark fas fa-eye"></i> 
+                                        <i class="text-dark fas fa-eye  ml-4"></i> 
                                     </td>
                                     <td scope="row" > <p class="row_pass" style="display: none"> {{$row->password}}</p> 
-                                    <p class="prop" style="display: block">********</p></td>
+                                    <p class="prop" style="display: block">******************************</p></td>
                                     <td scope="row">
-                                        <a href="/delete/{{$row->id}}" ><i class="text-danger far fa-trash-alt"></i></a>
+                                        <a href="/delete/{{$row->id}}" ><i class="text-danger far fa-trash-alt ml-3"></i></a>
 
                                         <a href="/edit/{{$row->id}}" ><i class=" text-success ml-2 far fa-edit"></i></a>
                                     </td>
@@ -111,7 +111,7 @@
         </p>
         
         
-        <div class="col " style="">
+        <div class="col mt-5" style="">
             <x-footer></x-footer>
         </div>
     </div>
