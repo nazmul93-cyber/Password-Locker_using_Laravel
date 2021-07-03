@@ -16,8 +16,8 @@
 
     </head>
     
-    <body class="font-sans ">
-        <div class="min-h-screen bg-gray-100">
+    <body class="font-sans " style="height: 90vh ;background-color:rgba(141, 210, 140, 0.1)">
+        <div class="min-h-screen " >
 
             
             <x-navigation></x-navigation>
