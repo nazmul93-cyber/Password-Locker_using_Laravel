@@ -50,8 +50,8 @@
                 </div>
                 
                 <div class="my-4">
-                    <h4 class=" offset-sm-4 col-sm-4  text-sm-center">
-                        <div class="owl-carousel owl-theme mt-5 container">
+                   <h4 class=" offset-sm-4 col-sm-4  text-sm-center">
+                        <!-- <div class="owl-carousel owl-theme mt-5 container">
                                 <div class="item">
 
                                         Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
@@ -67,10 +67,9 @@
                                     Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
                                     in one place and just remember one password 
                                 </div>
-                        </div>
-                        {{-- Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
-                        in one place and just remember one password  --}}
-                        
+                        </div> --> 
+                       Say goodbye to memorizing hunreds of passwords.Now you can store you passwords
+                        in one place and just remember one password 
                     </h4>
                 </div>
 
@@ -94,6 +93,8 @@
                                 <form action=" {{route('login')}} " method="GET">
                                 
                                     <button type="submit" class="btn btn-dark" >Login</button>
+
+                                    
                                     {{-- <a href="{{ route('login') }}" class="btn btn-secondary ">Log in</a> --}}
                                 
                                 </form>
