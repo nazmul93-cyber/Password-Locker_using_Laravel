@@ -100,7 +100,10 @@
 
                         <div  class="">
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="text-secondary ">Dashboard</a>
+                                
+                                <a href="{{ url('/dashboard') }}" class="btn btn-dark ml-5">Dashboard</a>
+                                {{-- in case the redirect didn't work --}}
+                            
                             @else
                                 <form action=" {{route('login')}} " method="GET">
                                 
@@ -123,7 +126,9 @@
 
                         <div  class="">
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="text-secondary ">Dashboard</a>
+                                {{-- <a href="{{ url('/dashboard') }}" class="btn btn-dark" >Dashboard</a> --}}
+
+                                {{-- user already loged in and redirected in the dash board --}}
                             @else
                             
                                 @if (Route::has('register'))
