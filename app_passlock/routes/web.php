@@ -4,12 +4,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasslockController;
 
 //draft controller
-use App\Http\Controllers\DraftController; 
+use App\Http\Controllers\DraftController;
+use Illuminate\Support\Facades\Auth;
+
+Route::get('/', function () 
+	{
+		if ( Auth::check() ) {
+			
+        	return redirect('/dashboard');
+    	}else{
+    		return view('welcome');
+    	};
+	
+	});
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
