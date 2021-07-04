@@ -26,7 +26,7 @@
                     <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
 
                         <label for="field1">Your login email to verify it's you</label>
-                          <input type="email" name="unimail" class="form-control" id="" placeholder="Your login email">
+                          <input type="email" name="unimail" value="{{old('unimail')}}" class="form-control" id="" placeholder="Your login email">
                               @if($errors->has('unimail'))
                                   <div class="text-danger">
                                       {{$errors->first('unimail')}}
@@ -38,7 +38,7 @@
 
                         <label for="field1"> Your login password to verify it's you, i know i am repeating my-self </label>
                       
-                              <input type="password" class="form-control" name="authpass" id="" placeholder="Your login password">
+                              <input type="password" class="form-control"  name="authpass" id="" placeholder="Your login password">
                               @if($errors->has('authpass'))
                                   <div class="text-danger">
                                       {{$errors->first('authpass')}}
@@ -50,7 +50,7 @@
                         <label for="field1">Now you can change the username</label>
                       
                            
-                              <input type="text" name="name" class="form-control" id="" placeholder="Your new probably creative username"> 
+                              <input type="text" name="name" class="form-control" value="{{old('name')}}"  placeholder="Your new probably creative username"> 
                               @if($errors->has('name'))
                                   <div class="text-danger">
                                       {{$errors->first('name')}}
