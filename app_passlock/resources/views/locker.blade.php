@@ -23,7 +23,7 @@
                   <div class="col-lg-12 col-sm-12 col-md-12 mb-3">
 
                       <label for="field1">the account/website url you wanna Add</label>
-                      <input type="text" name="website"  class="form-control" id="field1" placeholder=" URL" required>
+                      <input type="text" name="website" value="{{old('webiste')}}"  class="form-control" id="field1" placeholder=" URL" required>
                         @if($errors->has('website'))
                           <div class="text-danger">
                               {{$errors->first('website')}}
@@ -33,7 +33,7 @@
 
                   <div class=" col-sm-12 col-md-12  col-lg-12   mb-3">
                       <label for="field3">The email associated with that website</label>
-                      <input type="email" name="email"  class="form-control" id="field3" placeholder="Insert Email Address" required>
+                      <input type="email" name="email" value="{{old('email')}}"  class="form-control" id="field3" placeholder="Insert Email Address" required>
                         @if($errors->has('email'))
                           <div class="text-danger">
                               {{$errors->first('email')}}
