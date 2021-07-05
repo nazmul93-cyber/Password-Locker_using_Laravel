@@ -54,10 +54,10 @@
                                     <td scope="row">{{$row->website}}</td>
                                     <td scope="row">{{$row->email}}</td>
                                     <td scope="row" class="sign_hide"> 
-                                        <i class="text-dark fas fa-eye  ml-4"></i> 
+                                        <i class="text-dark fas fa-eye ml-4 "></i> 
                                     </td>
                                     <td scope="row" > <p class="row_pass" style="display: none"> {{$row->password}}</p> 
-                                    <p class="prop" style="display: block">******************************</p></td>
+                                    <p class="prop" style="display: block">***************</p></td>
                                     <td scope="row">
                                         <a href="/delete/{{$row->id}}" ><i class="text-danger far fa-trash-alt ml-3"></i></a>
 
@@ -74,23 +74,26 @@
                                 let prop = document.querySelectorAll('.prop');
                                 let hide_button = document.querySelectorAll('tr .sign_hide > i');
 
-                                // console.log(hide_button);
+                               
+
                                 for (let i = 0; i < hide_button.length; i++) {
                                     hide_button[i].addEventListener('click',()=>
                                     {
 
-                                        if(hide_button[i].className == 'text-dark fas fa-eye')
+
+                                        if(prop[i].style.display== 'block' || target_element[i].style.display=='none' )
                                         {
-                                            
-                                            hide_button[i].className = "text-success fas fa-eye ";
+                                            hide_button[i].className = "text-success fas fa-eye ml-4";
                                             prop[i].style.display = "none";
                                             target_element[i].style.display = "block";
 
                                         }else{
-                                            hide_button[i].className = 'text-dark fas fa-eye';
+                                            hide_button[i].className = "text-dark fas fa-eye ml-4";
                                             prop[i].style.display = "block";
-                                            target_element[i].style.display = "none";
+                                            target_element[i].style.display = "none ";
                                         }
+
+
                                     })
                                     
                                 }
